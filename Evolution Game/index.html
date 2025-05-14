@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolucija</title>
+    <link rel="stylesheet" href="indexstyle.css">
+</head>
+<body>
+    <audio id="hit" src="SFX/HIT.wav"></audio>
+    <div id="ss" class="startscreen" onmousedown="document.getElementById('ss').style.animation='intro 1s reverse'; document.getElementById('main').style.animation = 'intro 1s'; document.getElementById('ss').style.opacity=0
+    tohover=1; document.getElementById('main').style.opacity = 1; document.getElementById('ss').style.zIndex=-1; PlayMusic();">
+        <p>PRITISNI LEVIM KLIKOM OVDE!</p>
+        <p>PRESS THE LEFT MOUSE BUTTON HERE!</p>
+        <p>DRÜCKEN SIE HIER DIE LINKE MAUSTASTE!</p>
+    </div>
+    <div id="main" class="main">
+        <div class="namebar">
+            <p>EVOLUTION - EVOLUCIJA - DIE EVOLUTION</p>
+        </div>
+        <div class="menu">
+            <a id="eng" onmousedown="StartGame('eng')" onmouseover="PlaySound()">English</a>
+            <a id="srp" onmousedown="StartGame('srp')" onmouseover="PlaySound()">Srpski</a>
+            <a id="deu" onmousedown="StartGame('deu')" onmouseover="PlaySound()">Deutsch</a>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    var songcount = 1
+    var isplaying = 0
+    var tohover = 0
+    var intromusic = new Audio();
+        intromusic.src = "Music/ComfortZone.mp3"
+    var hitsound = new Audio();
+        hitsound.src = "Music/HIT.wav"
+
+    function Count()
+    {
+            setTimeout(() => {
+                if (songcount <= 3){
+                    songcount = songcount + 1       
+                } else {
+                    songcount=1
+                }
+                console.log(songcount);
+                console.log("Time:" + 656.85*(4-songcount));
+                Count()
+            }, 437.9)
+    }
+    function PlaySound(){
+        if (tohover==1)
+        {
+            
+            var hover = new Audio();
+            hover.src = "SFX/hover.wav"
+            hover.play();
+        } 
+    }
+
+    function PlayMusic(){
+        
+        intromusic.volume = 0.5;
+        if (isplaying==0){
+            Count()
+            isplaying = 1
+            intromusic.play();
+            setTimeout(() => {
+                document.getElementById("main").style.animation= "none";
+        }, 1000)
+        } else {
+            
+        } 
+    }
+
+    function StartGame(lang){
+        setTimeout(() => {
+        intromusic.volume=0
+        document.getElementById(lang).style.zIndex= 10;
+        document.getElementById(lang).style.animation= "hit 1s cubic-bezier(0.075, 0.82, 0.165, 1)";
+        document.getElementById(lang).style.transform= "scale(200%)";
+        document.getElementById("main").style.animation= "intro 1.5s reverse";
+        document.getElementById("main").style.opacity=0;
+        document.getElementById("hit").play();
+        
+        
+        setTimeout(() => {
+            if(lang=="eng")
+        {
+            window.location.href = 'Game/english/english.html';
+        }
+        if(lang=="srp")
+        {
+            window.location.href = 'Game/srpski/srpski.html';
+        }
+        if(lang=="deu")
+        {
+            window.location.href = 'Game/deutsch/deutsch.html';
+        }
+        }, 3500)
+        }, (656.85*(4-songcount)))
+    }
+</script>

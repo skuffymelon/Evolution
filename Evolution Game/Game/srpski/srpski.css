@@ -1,0 +1,253 @@
+@keyframes introfade {
+    0% {opacity: 0; transform: translateY(-10vh);}
+    100% {opacity: 1;}
+}
+@keyframes fade {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes intromove {
+    0% {opacity: 0; transform: translateX(-30vw);}
+    100% {opacity: 1;}
+}
+@keyframes intromove2 {
+    0% {opacity: 0; transform: translateX(70vh);}
+    100% {opacity: 1;}
+}
+@keyframes smooth {
+    0% {}
+    50% {transform: scale(105%);}
+    100% {}
+}
+@keyframes rotate {
+    0% {transform:rotate(1deg)}
+    50% {transform: rotate(-1deg);}
+    100% {transform:rotate(1deg)}
+}
+@keyframes shine {
+    0% {background-color: rgb(3, 0, 41);;}
+    50% {background-color: rgb(17, 0, 255);}
+    100% {background-color: rgb(3, 0, 41);;}
+}
+@keyframes correct {
+    0% {transform: scale(100%);}
+    25% {transform: scale(200%);background-color: rgb(0, 255, 85);}
+    100% {transform: scale(100%);}
+}
+@keyframes incorrect {
+    0% {transform: scale(100%);}
+    25% {transform: scale(200%);background-color: red;}
+    100% {transform: scale(100%);}
+}
+.visuals
+{
+    z-index: -99;
+    opacity: 0;
+    transition: 0.5s;
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.visuals .announce
+{
+    user-select: none;
+    transition: 0.5s;
+    padding: 2vh;
+    border-radius: 2vh;
+    background-color: blueviolet;
+    font-size: 10vh;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+}
+.begin
+{
+    transition: 1s;
+    background-color: rgba(0, 0, 0, 0.685);
+    z-index: -100;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+.begintext
+{
+    user-select: none;
+    z-index: -100;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    font-size: 3vh;
+}
+.begintext p
+{
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    opacity: 0;
+}
+.begin .charyintro img
+{
+    opacity: 0;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    width: 20vw;
+    border-radius: 5vh;
+}
+body
+{
+    overflow: hidden;
+    font-family: 'Dosis';
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+.topbar
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: introfade 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    width: 100vw;
+    height: 10vh;
+    background: linear-gradient(blue,darkblue);
+    border-bottom-right-radius: 3vh;
+}
+.topbar p
+{
+    animation: rotate 4s ease-in-out infinite;
+    transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+    user-select: none;
+    color: white;
+    font-size: 3vh;
+    text-align: center;
+}
+.topbar p:hover
+{
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    font-weight: 500;
+    color: whitesmoke;
+    font-size: 3.3vh;
+    text-align: center;
+}
+.bottomside
+{
+    display: flex;
+}
+.leftsidebar
+{
+    flex-direction: column;
+    animation: intromove 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    width: 30vw;
+    height: 90vh;
+    display: flex;
+    background: linear-gradient(rgb(0, 0, 54), rgb(0,0,100), rgb(0, 0, 54));
+    border-radius: 3vh;
+    border-top-left-radius: 0vh;
+}
+.leftsidebar .image
+{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 3vh;
+    width: 30vw;
+    height: 60vh;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.leftsidebar .image img
+{
+    user-select: none;
+    animation: rotate 2s ease-in-out infinite;
+    transition: 1.5s;
+    opacity:0;
+    border-radius: 2vh;
+    width: 22.5vw;
+}
+.leftsidebar .image img:hover
+{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+    opacity: 1;
+    border-radius: 2vh;
+    width: 27.5vw;
+}
+.leftsidebar .image .points
+{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    padding: 1vh;
+    background-color: gray;
+    border-radius: 0.5vh;
+    user-select: none;
+    font-size: 2vh;
+    color: black;
+}
+.leftsidebar .image .points:hover
+{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+    border-radius: 1vh;
+    background-color: white;
+    user-select: none;
+    font-size: 3vh;
+    color: black;
+}
+.leftsidebar .chary
+{
+    width: 30vw;
+    height: 30vh;
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+}
+.leftsidebar .chary img
+{
+    z-index: 10;
+    opacity: 0;
+    border-radius: 5vh;
+    width: 10vw;
+}
+.answersection
+{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    animation: intromove2 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    width: 70vw;
+    height: 90vh;
+    background-color: black;
+    border-radius: 3vh;
+    border-color: rgb(9, 0, 136);
+    border-style: solid;
+}
+.answersection .ans
+{
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    text-align: center;
+    background-color: rgb(3, 0, 41);
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    padding: 5vh;
+    font-size: 3vh;
+    margin: 4vh;
+    color: white;
+    border-radius: 2vh;
+}
+.answersection .ans:hover
+{
+    animation: smooth 2.5s infinite ease-out;
+    background-color: rgb(31, 0, 204);
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 4vh;
+    padding: 5vh;
+}
