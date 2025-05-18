@@ -163,6 +163,32 @@ body
     height: 60vh;
     background-color: rgba(255, 255, 255, 0.1);
 }
+.leftsidebar .image .streak
+{
+    z-index: 10;
+    user-select: none;
+    color: white;
+    font-weight: 1000;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: black;
+    font-size: 1vw;
+    display: flex;
+    align-items: center;
+    width: 30vw;
+    height: 10vh;
+    position: fixed;
+    transform: translateY(-25vh);
+}
+.leftsidebar .image .streak img
+{
+    padding: 2vh;
+    width: 2vw;
+    opacity: 0.5;
+}
+.leftsidebar .image .streak img:hover
+{
+    width: 2.5vw;
+}
 .leftsidebar .image img
 {
     user-select: none;

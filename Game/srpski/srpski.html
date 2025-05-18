@@ -18,15 +18,18 @@
     <div id="visuals" class="visuals">
         <p id="announce" class="announce"></p>
     </div>
-    <div class="topbar">
+    <div id="topbar" class="topbar">
         <p id="q"></p>
     </div>
     <div class="bottomside">
-    <div class="leftsidebar">
+    <div id="leftsidebar" class="leftsidebar">
         <div class="image">
+            <div class="streak">
+                <img id="streak" src="../../Data/Images/flame-icon.svg" alt="">
+                <p id="streaktext">0</p>
+            </div>
             <div id="pc" class="points">Poeni: 0</div>
             <img id="cimg" src="" alt="" draggable="false">
-            
         </div>
         <div class="chary"><img id="chary" src="../../Data/Chary/charyidle.gif" alt="" draggable="false"></div>
     </div>
@@ -39,6 +42,7 @@
     </div>
 </body>
 </html>
+
 <script>
     function Hover()
     {
@@ -47,7 +51,7 @@
         HoverSound.play();
     }
 </script>
-<script>
+<script>  
     var easyMus = new Audio()
         easyMus.src = "../../Music/TabloidJargon.mp3"
     var moderateMus = new Audio()
@@ -195,6 +199,8 @@
     {
         vhardMus.pause();
         finalMus.play();
+        document.getElementById("topbar").style.background ="linear-gradient(orange, rgb(172, 94, 0))"
+        document.getElementById("leftsidebar").style.background ="linear-gradient(orange, rgb(172, 94, 0))"
         Progress(questions,5)
         Announce("HOMO SAPIENS","../../SFX/Go.wav",'blueviolet')
     }
@@ -218,43 +224,60 @@
             yap.play();
             yap.currentTime=0
             document.getElementById("chint").src="../../Data/Chary/charytalk.gif"
-            document.getElementById("chinttext").innerHTML="Rezultati su stigli i imate rezultat od: "+points+"!"
-            document.getElementById("chinttext").style.opacity=1
+            
+            if (points==50)
+            {
+                document.getElementById("chinttext").innerHTML="Rezultati su stigli i imate perfektan rezultat od: "+points+" poena!"
+                document.getElementById("chinttext").style.opacity=1
+            }else {
+                document.getElementById("chinttext").innerHTML="Rezultati su stigli i imate rezultat od: "+points+"!"
+                document.getElementById("chinttext").style.opacity=1
+            }
         }, 2500);
         setTimeout(() => {
             yap.pause();
             document.getElementById("chint").src="../../Data/Chary/charyidle.gif"
-            document.getElementById("chinttext").innerHTML="Rezultati su stigli i imate rezultat od: "+points+"!"
         }, 6000);
         setTimeout(() => {
             yap.play();
             yap.currentTime=0
             document.getElementById("chint").src="../../Data/Chary/charytalk.gif"
-            document.getElementById("chinttext").innerHTML="I vi ste imali najviši niz tačnih pitanja od: "+hstreak+"!"
+            if (hstreak>=27)
+            {
+                document.getElementById("chinttext").innerHTML="I sva ste pitanja dobro odgovorili: "+hstreak+" pitanja za redom!"
+            }else {
+                document.getElementById("chinttext").innerHTML="I vi ste imali najviši niz tačnih pitanja od: "+hstreak+"!"
+            }
         }, 7000);
         setTimeout(() => {
             yap.pause();
             yap.currentTime=0
             document.getElementById("chint").src="../../Data/Chary/charyidle.gif"
             document.getElementById("bg").style.backgroundColor="black"
-            document.getElementById("chinttext").innerHTML="I vi ste imali najviši niz tačnih pitanja od: "+hstreak+"!"
         }, 10500);
+        setTimeout(() => {
+            yap.play();
+            yap.currentTime=0
+            document.getElementById("chint").src="../../Data/Chary/charytalk.gif"
+            document.getElementById("bg").style.backgroundColor="black"
+            document.getElementById("chinttext").innerHTML="Zbogom!"
+        }, 13500);
         setTimeout(() => {
             yap.pause();
             yap.currentTime=0
             document.getElementById("chint").src="../../Data/Chary/charyidle.gif"
             document.getElementById("bg").style.backgroundColor="black"
             document.getElementById("chinttext").innerHTML="Zbogom!"
-        }, 13500);
+        }, 14500);
         setTimeout(() => {
             document.body.style.animation="fade 2s reverse"
             document.body.style.opacity=0
         }, 18000);
         setTimeout(() => {
-            window.location.href="/index.html"
+            window.location.href="../../index.html"
         }, 20000);
     }
-    //Intro()
+    Intro()
 </script>
 <script>
     points=0
@@ -339,6 +362,7 @@
             correct.play();
             points = points + 1
             streak = streak + 1
+            document.getElementById("streaktext").innerHTML = streak
             document.getElementById("pc").innerHTML = "Poeni: "+ points
             document.getElementById("pc").style.animation = "correct 1.5s cubic-bezier(0.075, 0.82, 0.165, 1)"
             setTimeout(()=>{document.getElementById("pc").style.animation = "none"},1500)
@@ -346,6 +370,9 @@
             if (streak>=3)
             {
                 Announce("TAČNO ZA REDOM "+ streak + " PUTA!", "../../SFX/CinematicBoom.wav",'orange')
+                document.getElementById("streak").style.animation = "rotate 1s"
+                document.getElementById("streak").style.opacity = 1
+                document.getElementById("streak").style.width = "2.25vh"
                 if (streak>=5)
                 {
                     points = points + 1
@@ -368,7 +395,11 @@
                 streak = 0
             }
             streak = 0
-            
+
+            document.getElementById("streak").style.animation = "none"
+            document.getElementById("streak").style.opacity = 0.5
+            document.getElementById("streak").style.width = "2vh"
+            document.getElementById("streaktext").innerHTML = "0"
             document.getElementById("pc").innerHTML = "Poeni: "+ points
             document.getElementById("pc").style.animation = "incorrect 3s cubic-bezier(0.075, 0.82, 0.165, 1)"
             setTimeout(()=>{document.getElementById("pc").style.animation = "none"},3000)

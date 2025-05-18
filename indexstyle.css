@@ -64,6 +64,10 @@ body
     transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
     font-size: 4vh;
 }
+.namebar img
+{
+    height: 0vh;
+}
 .menu
 {
     display: flex;
