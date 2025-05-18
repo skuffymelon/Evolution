@@ -9,7 +9,7 @@
 <body>
     <div id="bg"class="begin">
         <div class="charyintro">
-            <img id="chint" src="/Data/Chary/charytalk.gif" alt="">
+            <img id="chint" src="../../Data/Chary/charytalk.gif" alt="">
         </div>
     </div>
     <div id="bt" class="begintext">
@@ -28,7 +28,7 @@
             <img id="cimg" src="" alt="" draggable="false">
             
         </div>
-        <div class="chary"><img id="chary" src="/Data/Chary/charyidle.gif" alt="" draggable="false"></div>
+        <div class="chary"><img id="chary" src="../../Data/Chary/charyidle.gif" alt="" draggable="false"></div>
     </div>
     <div class="answersection">
             <div id="a1" class="ans" onmouseover="Hover()" onclick="CheckAnswer(1)"></div>
@@ -43,55 +43,55 @@
     function Hover()
     {
         var HoverSound = new Audio()
-        HoverSound.src="/SFX/hover.wav"
+        HoverSound.src="../../SFX/hover.wav"
         HoverSound.play();
     }
 </script>
 <script>
     var easyMus = new Audio()
-        easyMus.src = "/Music/TabloidJargon.mp3"
+        easyMus.src = "../../Music/TabloidJargon.mp3"
     var moderateMus = new Audio()
-        moderateMus.src = "/Music/Rogues Gallery - Mirage Saloon Zone Act 2.mp3"
+        moderateMus.src = "../../Music/Rogues Gallery - Mirage Saloon Zone Act 2.mp3"
         moderateMus.volume=0.17
         moderateMus.loop="loop"
     var hardMus = new Audio()
-        hardMus.src = "/Music/intenste.mp3"
+        hardMus.src = "../../Music/intenste.mp3"
         hardMus.volume=0.2
         hardMus.loop="loop"
     var vhardMus = new Audio()
-        vhardMus.src = "/Music/Metallic Madness Zone Act 2.mp3"
+        vhardMus.src = "../../Music/Metallic Madness Zone Act 2.mp3"
         vhardMus.volume=0.12
         vhardMus.loop="loop"
     var finalMus = new Audio()
-        finalMus.src = "/Music/Lava Reef Zone Act 2.mp3"
+        finalMus.src = "../../Music/Lava Reef Zone Act 2.mp3"
         finalMus.volume=0.12
         finalMus.loop="loop"
     var resMus = new Audio()
-        resMus.src = "/Music/Hydro City Zone Act 1.mp3"
+        resMus.src = "../../Music/Hydro City Zone Act 1.mp3"
         resMus.volume=0.12
         resMus.loop="loop"
     var yap = new Audio()
-        yap.src="/SFX/MEOW.wav"
+        yap.src="../../SFX/MEOW.wav"
         yap.loop="loop"
-    var Go = new Audio();Go.src="/SFX/Go.wav";Go.volume=0.6
+    var Go = new Audio();Go.src="../../SFX/Go.wav";Go.volume=0.6
     function Intro()
     {
         var introMus = new Audio()
-        introMus.src = "/Music/BlossomHaze.mp3"
+        introMus.src = "../../Music/BlossomHaze.mp3"
         introMus.volume = 0.2
         introMus.play()
         document.getElementById("bg").style.zIndex=100
         document.getElementById("bt").style.zIndex=100
-        //document.getElementById("cimg").src = "/Data/Images/images.jpeg";
+        //document.getElementById("cimg").src = "../../Data/Images/images.jpeg";
         setTimeout(() =>{
-            document.getElementById("chint").src = "/Data/Chary/charyidle.gif"
+            document.getElementById("chint").src = "../../Data/Chary/charyidle.gif"
             document.getElementById("chint").style.opacity = 1
             
         },2500)
         setTimeout(() =>{
             yap.play();
             document.getElementById("chinttext").style.opacity = 1
-            document.getElementById("chint").src = "/Data/Chary/charytalk.gif"
+            document.getElementById("chint").src = "../../Data/Chary/charytalk.gif"
         },3500)
         setTimeout(() =>{
             document.getElementById("q").innerHTML= "QUESTION 1: During what time did the Australopithecus live?"
@@ -111,9 +111,9 @@
         },9000)
         setTimeout(() =>{
             yap.pause();
-            document.getElementById("chint").src = "/Data/Chary/charyidle.gif"
+            document.getElementById("chint").src = "../../Data/Chary/charyidle.gif"
             var glitter = new Audio()
-            glitter.src = "/SFX/Glitter.wav"
+            glitter.src = "../../SFX/Glitter.wav"
             glitter.play();
             document.getElementById("a1").style.animation="3s shine"
             document.getElementById("a2").style.animation="3s shine"
@@ -125,7 +125,7 @@
         },10500)
         setTimeout(() =>{
             yap.play();
-            document.getElementById("chint").src = "/Data/Chary/charytalk.gif"
+            document.getElementById("chint").src = "../../Data/Chary/charytalk.gif"
             document.getElementById("chinttext").innerHTML= "Now Go!!!"
             document.getElementById("bg").style.backgroundColor="rgba(0, 0, 0, 0.5)"
             document.getElementById("chint").style.transform = "translate(0vw, 0)"
@@ -134,7 +134,7 @@
         },14000)
         setTimeout(() =>{
             yap.pause();
-            document.getElementById("chint").src = "/Data/Chary/charyidle.gif"
+            document.getElementById("chint").src = "../../Data/Chary/charyidle.gif"
             document.getElementById("a1").style.animation="none"
             document.getElementById("a2").style.animation="none"
             document.getElementById("a3").style.animation="none"
@@ -162,7 +162,7 @@
     }
     function Australopithecus()
     {
-        Announce("GO!", "/SFX/Go.wav")
+        Announce("GO!", "../../SFX/Go.wav")
         Progress(questions,1)
         
         easyMus.volume=0.15
@@ -173,35 +173,35 @@
         easyMus.pause();
         moderateMus.play();
         Progress(questions,2)
-        Announce("HOMO HABILIS","/SFX/Go.wav",'violet')
+        Announce("HOMO HABILIS","../../SFX/Go.wav",'violet')
     }
     function HomoErectus()
     {
         moderateMus.pause();
         hardMus.play();
         Progress(questions,3)
-        Announce("HOMO ERECTUS","/SFX/Go.wav",'blue')
+        Announce("HOMO ERECTUS","../../SFX/Go.wav",'blue')
     }
     function HomoSapiensNeanderthalensis()
     {
         hardMus.pause();
         vhardMus.play();
         Progress(questions,4)
-        Announce("HOMO NEANDERTHALENSIS","/SFX/Go.wav",'green')
+        Announce("HOMO NEANDERTHALENSIS","../../SFX/Go.wav",'green')
     }
     function HomoSapiens()
     {
         vhardMus.pause();
         finalMus.play();
         Progress(questions,5)
-        Announce("HOMO SAPIENS","/SFX/Go.wav",'blueviolet')
+        Announce("HOMO SAPIENS","../../SFX/Go.wav",'blueviolet')
     }
     function Results()
     {
         finalMus.pause();
         resMus.play();
         ChangeImage("")
-        Announce("RESULTS","/SFX/CinematicBoom.wav",'blueviolet')
+        Announce("RESULTS","../../SFX/CinematicBoom.wav",'blueviolet')
         setTimeout(() => {
             document.getElementById("bg").style.zIndex=100
             document.getElementById("bt").style.zIndex=100
@@ -209,37 +209,37 @@
             document.getElementById("bt").style.opacity=1
             document.getElementById("chint").style.opacity=1
             document.getElementById("chint").style.transform="translate(0vw,0vh)"
-            document.getElementById("chint").src="/Data/Chary/charyidle.gif"
+            document.getElementById("chint").src="../../Data/Chary/charyidle.gif"
         }, 1500);
         setTimeout(() => {
             yap.play();
             yap.currentTime=0
-            document.getElementById("chint").src="/Data/Chary/charytalk.gif"
+            document.getElementById("chint").src="../../Data/Chary/charytalk.gif"
             document.getElementById("chinttext").innerHTML="Results came in and you guys have a score of: "+points+"!"
             document.getElementById("chinttext").style.opacity=1
         }, 2500);
         setTimeout(() => {
             yap.pause();
-            document.getElementById("chint").src="/Data/Chary/charyidle.gif"
+            document.getElementById("chint").src="../../Data/Chary/charyidle.gif"
             document.getElementById("chinttext").innerHTML="Results came in and you guys have a score of: "+points+"!"
         }, 6000);
         setTimeout(() => {
             yap.play();
             yap.currentTime=0
-            document.getElementById("chint").src="/Data/Chary/charytalk.gif"
+            document.getElementById("chint").src="../../Data/Chary/charytalk.gif"
             document.getElementById("chinttext").innerHTML="And you guys had a highest streak of: "+hstreak+"!"
         }, 7000);
         setTimeout(() => {
             yap.pause();
             yap.currentTime=0
-            document.getElementById("chint").src="/Data/Chary/charyidle.gif"
+            document.getElementById("chint").src="../../Data/Chary/charyidle.gif"
             document.getElementById("bg").style.backgroundColor="black"
             document.getElementById("chinttext").innerHTML="And you guys had a highest streak of: "+hstreak+"!"
         }, 10500);
         setTimeout(() => {
             yap.pause();
             yap.currentTime=0
-            document.getElementById("chint").src="/Data/Chary/charyidle.gif"
+            document.getElementById("chint").src="../../Data/Chary/charyidle.gif"
             document.getElementById("bg").style.backgroundColor="black"
             document.getElementById("chinttext").innerHTML="Goodbye!"
         }, 13500);
@@ -315,7 +315,7 @@
         setTimeout(() => {
             yap.play();
             yap.currentTime=0
-            document.getElementById("chary").src = "/Data/Chary/charytalk.gif"
+            document.getElementById("chary").src = "../../Data/Chary/charytalk.gif"
             document.getElementById("q").style.opacity =1
             a1.style.opacity =1
             a2.style.opacity =1
@@ -324,7 +324,7 @@
         },3000)
         setTimeout(() => {
             yap.pause();
-            document.getElementById("chary").src = "/Data/Chary/charyidle.gif"
+            document.getElementById("chary").src = "../../Data/Chary/charyidle.gif"
         },5500)
     }
     function CheckAnswer(des)
@@ -332,7 +332,7 @@
         if (des==corqm)
         {
             var correct = new Audio()
-            correct.src="/SFX/Correct.wav"
+            correct.src="../../SFX/Correct.wav"
             correct.play();
             points = points + 1
             streak = streak + 1
@@ -342,7 +342,7 @@
             Progress(questions)
             if (streak>=3)
             {
-                Announce("STREAK OF "+ streak + "!", "/SFX/CinematicBoom.wav",'orange')
+                Announce("STREAK OF "+ streak + "!", "../../SFX/CinematicBoom.wav",'orange')
                 if (streak>=5)
                 {
                     points = points + 1
@@ -356,12 +356,12 @@
         } else
         {
             var incorrect = new Audio()
-            incorrect.src="/SFX/Incorrect.wav"
+            incorrect.src="../../SFX/Incorrect.wav"
             incorrect.play();
             points = points - 1
             if (streak>=3)
             {
-                Announce("STREAK OF "+ streak + " LOST!", "/SFX/CinematicBoom.wav",'red')
+                Announce("STREAK OF "+ streak + " LOST!", "../../SFX/CinematicBoom.wav",'red')
                 streak = 0
             }
             streak = 0
@@ -386,22 +386,22 @@
         if (qes==1)
         {
             ChangeQuestion("QUESTION 1: In what years did the spiecies Australopithecus live?","100,000 years ago.","300,000 years ago.","4 million years ago.","They live now.",3)
-            ChangeImage("/Data/Images/images.jpeg")
+            ChangeImage("../../Data/Images/images.jpeg")
         }
         if(qes==2)
         {
             ChangeQuestion("QUESTION 2: In what continent did Australopithecus live?","Asia","Africa","Europe","Australia",2)
-            ChangeImage("/Data/Images/australopithecus1.webp")
+            ChangeImage("../../Data/Images/australopithecus1.webp")
         }
         if(qes==3)
         {
             ChangeQuestion("QUESTION 3: What did the Australopithecus eat?","Fed on animals they killed.","Fed on various insects.","Fed on cactus.","Fed on seeds and fruits.",4)
-            ChangeImage("/Data/Images/Australopithecus-Fossils.webp")
+            ChangeImage("../../Data/Images/Australopithecus-Fossils.webp")
         }
         if(qes==4)
         {
             ChangeQuestion("QUESTION 4: Did the Australopithecus have a brain like ours?","No, their brain was considerably smaller than ours.","Yes.","No, but their brain was the same size as ours.","Yes, but their brain was considerably smaller than ours.",4)
-            ChangeImage("/Data/Images/Mrs_Ples.jpg")
+            ChangeImage("../../Data/Images/Mrs_Ples.jpg")
         }
         if(qes==5)
         {
@@ -414,27 +414,27 @@
         if (qes==1)
         {
             ChangeQuestion("QUESTION 1: In what continent did Homo habilis live in?","Asia","Europe and Africa","Europe and Asia","Africa",4)
-            ChangeImage("/Data/Images/Homo-habilis-rendering-Artist.webp")
+            ChangeImage("../../Data/Images/Homo-habilis-rendering-Artist.webp")
         }
         if(qes==2)
         {
             ChangeQuestion("QUESTION 2: What kind of growth did they have?","Tall growth.","They were short.","Their growth was considerably tall.","Their growth was considerably short.",4)
-            ChangeImage("/Data/Images/homo-habilis-action-8616501.jpg.webp")
+            ChangeImage("../../Data/Images/homo-habilis-action-8616501.jpg.webp")
         }
         if(qes==3)
         {
             ChangeQuestion("QUESTION 3: What did the Homo habilis eat?","Fed on animals they killed and fruits.","Fed on various insects.","Fed on seeds and fruits.","Fed on cacti.",1)
-            ChangeImage("/Data/Images/KNM_ER_1813_(H._habilis).png")
+            ChangeImage("../../Data/Images/KNM_ER_1813_(H._habilis).png")
         }
         if(qes==4)
         {
             ChangeQuestion("QUESTION 4: Why are Homo habilis called the way they are","Because they knew how to eat.","Because of use of self-made tools for hunting.","Because their brain is bigger than their ancestor.","They were just called that.",2)
-            ChangeImage("/Data/Images/63f6c484bda55b001d4e9ff0.jpg")
+            ChangeImage("../../Data/Images/63f6c484bda55b001d4e9ff0.jpg")
         }
         if(qes==5)
         {
             ChangeQuestion("QUESTION 5: What kind of teeth did they have?","Bigger than their ancestor.","They didn't have any teeth.","Smaller than their ancestor.","Considerably bigger teeth than ancestors",3)
-            ChangeImage("/Data/Images/habilis_KNMER1813_skull_CC_lt_3qtr_sq.jpg.webp")
+            ChangeImage("../../Data/Images/habilis_KNMER1813_skull_CC_lt_3qtr_sq.jpg.webp")
         }
         if(qes==6)
         {
@@ -447,32 +447,32 @@
         if (qes==1)
         {
             ChangeQuestion("QUESTION 1: In what continents did Homo erectus live in?","Asia and Europe","Africa","Asia and Africa","Europe",1)
-            ChangeImage("/Data/Images/Homo-erectus-rendering-Artist.webp")
+            ChangeImage("../../Data/Images/Homo-erectus-rendering-Artist.webp")
         }
         if(qes==2)
         {
             ChangeQuestion("QUESTION 2: What was the volume of their brain?","Considerably smaller than their ancestors.","The size of their brain stayed the same.","Considerably bigger than their ancestors.","//////",3)
-            ChangeImage("/Data/Images/030916_bb_homoerectus.webp")
+            ChangeImage("../../Data/Images/030916_bb_homoerectus.webp")
         }
         if(qes==3)
         {
             ChangeQuestion("QUESTION 3: What was their growth?","Considerably taller than ancestors","Considerably shorter than ancestors.","Mostly stayed the same size.","//////",1)
-            ChangeImage("/Data/Images/Homo-erectus-rendering-Artist.webp")
+            ChangeImage("../../Data/Images/Homo-erectus-rendering-Artist.webp")
         }
         if(qes==4)
         {
             ChangeQuestion("QUESTION 4: Why are Homo erectus called the way they are","Because the use of fire.","Because of even better hunting skills.","Because they stand upright","They were just called that.",3)
-            ChangeImage("/Data/Images/Homo-erectus.webp")
+            ChangeImage("../../Data/Images/Homo-erectus.webp")
         }
         if(qes==5)
         {
             ChangeQuestion("QUESTION 5: *Till* when did they live?","1.8 million years ago.","They still live now to this day.","500.000 years ago.","300.000 years ago.",4)
-            ChangeImage("/Data/Images/image_1620_1-Homo-erectus.jpg")
+            ChangeImage("../../Data/Images/image_1620_1-Homo-erectus.jpg")
         }
         if(qes==6)
         {
             ChangeQuestion("QUESTION 6: Whats the most significant thing Homo erectus invented?","Invent tools.","Invent fire and cooking food.","They did nothing significant.","///////",2)
-            ChangeImage("/Data/Images/homo-erectus-fire-and-tool-prep-two-column.jpg.thumb.768.768.png")
+            ChangeImage("../../Data/Images/homo-erectus-fire-and-tool-prep-two-column.jpg.thumb.768.768.png")
         }
         if(qes==7)
         {
@@ -485,32 +485,32 @@
         if (qes==1)
         {
             ChangeQuestion("QUESTION 1: Why are Neanderthals called the way they are?","Because of the continent they lived in.","They were just called that.","Because of a cave their fossils were found in.","Because they lived in caves.",3)
-            ChangeImage("/Data/Images/rendering-Artist-Homo-neanderthalensis-Europe-Central-Asia.webp")
+            ChangeImage("../../Data/Images/rendering-Artist-Homo-neanderthalensis-Europe-Central-Asia.webp")
         }
         if(qes==2)
         {
             ChangeQuestion("QUESTION 2: What was the volume of their brain?","Considerably smaller than their ancestors.","The size of their brain stayed the same.","Bigger than their ancestors.","//////",3)
-            ChangeImage("/Data/Images/640px-Homo_sapiens_neanderthalensis.jpg")
+            ChangeImage("../../Data/Images/640px-Homo_sapiens_neanderthalensis.jpg")
         }
         if(qes==3)
         {
             ChangeQuestion("QUESTION 3: What was their growth?","Considerably taller than ancestors","Considerably shorter than ancestors.","They had a short growth.","They had a short growth but they were muscular.",4)
-            ChangeImage("/Data/Images/Neanderthal-recontruction-foto-by-Wolfgang-Sauber-.jpg")
+            ChangeImage("../../Data/Images/Neanderthal-recontruction-foto-by-Wolfgang-Sauber-.jpg")
         }
         if(qes==4)
         {
             ChangeQuestion("QUESTION 4: In what period of time did they live?","In the period between a million and 500.000 years ago","In the period between 250.000 and 30.000 years ago","/////","//////",2)
-            ChangeImage("/Data/Images/496177.jpeg")
+            ChangeImage("../../Data/Images/496177.jpeg")
         }
         if(qes==5)
         {
             ChangeQuestion("QUESTION 5: Did they help their partners out when they were sick?","No.","Yes.","/////////","/////////",2)
-            ChangeImage("/Data/Images/8e99d49c6bde14bede843ca27fa229c9.avif")
+            ChangeImage("../../Data/Images/8e99d49c6bde14bede843ca27fa229c9.avif")
         }
         if(qes==6)
         {
             ChangeQuestion("QUESTION 6: In what continents were his fossils found?","In Europe.","In Asia and Europe.","In Europe, West Asia and Africa.","In France.",3)
-            ChangeImage("/Data/Images/1-neanderthal.png")
+            ChangeImage("../../Data/Images/1-neanderthal.png")
         }
         if(qes==7)
         {
@@ -523,32 +523,32 @@
         if (qes==1)
         {
             ChangeQuestion("QUESTION 1: Where did Homo Sapiens live?","Africa","Africa and Europe","Asia","Australia",2)
-            ChangeImage("/Data/Images/Human-being.webp")
+            ChangeImage("../../Data/Images/Human-being.webp")
         }
         if(qes==2)
         {
             ChangeQuestion("QUESTION 2: What was the volume of their brain?","Considerably smaller than their ancestors.","The volume of their brain stayed the same.","Bigger than their ancestors.","//////",2)
-            ChangeImage("/Data/Images/CX7MB7OSV5KAHPXFWSMRKQ37M4.avif")
+            ChangeImage("../../Data/Images/CX7MB7OSV5KAHPXFWSMRKQ37M4.avif")
         }
         if(qes==3)
         {
             ChangeQuestion("QUESTION 3: What was their growth?","Taller than ancestors.","Considerably shorter than ancestors.","They had a really tall growth.","They had a short growth but they were muscular.",1)
-            ChangeImage("/Data/Images/Human_Ancestor-Taiwan_55543.avif")
+            ChangeImage("../../Data/Images/Human_Ancestor-Taiwan_55543.avif")
         }
         if(qes==4)
         {
             ChangeQuestion("QUESTION 4: In what period of time did they live?","They live now.","In the period between 250.000 and 30.000 years ago","4 million years ago.","300.000 years ago.",1)
-            ChangeImage("/Data/Images/istockphoto-165960104-612x612.jpg")
+            ChangeImage("../../Data/Images/istockphoto-165960104-612x612.jpg")
         }
         if(qes==5)
         {
-            ChangeQuestion("QUESTION 5: ","No.","Yes.","/////////","/////////",2)
-            ChangeImage("/Data/Images/homo_sapiens.jpg")
+            ChangeQuestion("QUESTION 5: Do Homo sapiens have a bigger skull than their ancestor? ","No.","Yes.","/////////","/////////",1)
+            ChangeImage("../../Data/Images/homo_sapiens.jpg")
         }
         if(qes==6)
         {
             ChangeQuestion("QUESTION 6: What skills do they have?","To eat.","To make fires.","They have amazing artistic skills and musical skills.","They don't.",3)
-            ChangeImage("/Data/Images/300432606_371044965222522_6787691482518176753_n.jpg")
+            ChangeImage("../../Data/Images/300432606_371044965222522_6787691482518176753_n.jpg")
         }
         if(qes==7)
         {
